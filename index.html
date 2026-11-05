@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СНТ імені О.А. Киселя | Національний медичний університет імені О.О. Богомольця</title>
+  <meta name="description" content="Офіційний інноваційний веб-портал Студентського наукового товариства імені О.А. Киселя Національного медичного університету імені О.О. Богомольця. Понад 140 років наукового лідерства, 65+ гуртків, AYMSConf.">
+  <meta name="theme-color" content="#05070e">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brslvdrkchv.github.io/KYSIL/">
+  <meta property="og:title" content="СНТ імені О.А. Киселя — Науковий Авангард НМУ">
+  <meta property="og:description" content="Понад 140 років традицій, 65+ студентських наукових гуртків, флагманська конференція AYMSConf та фахові публікації.">
+  <meta property="og:image" content="./assets/images/snt-hero.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/nmu-favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Interactive Canvas & Ambient Glows -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- ========================================================================
+       SITE HEADER / FLOATING GLASS CAPSULE
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <div class="nav-crest">
+          <img src="./assets/images/snt-avatar.jpg" alt="СНТ імені Киселя">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">СНТ КИСЕЛЯ</span>
+          <span class="brand-sub">НМУ ІМ. О.О. БОГОМОЛЬЦЯ</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">Про Товариство</a></li>
+          <li><a href="#circles" class="nav-link">Гуртки СНГ</a></li>
+          <li><a href="#history" class="nav-link">Спадщина 1881</a></li>
+          <li><a href="#conferences" class="nav-link">AYMSConf</a></li>
+          <li><a href="#journal" class="nav-link">Журнал ВАК</a></li>
+          <li><a href="#leadership" class="nav-link">Керівництво</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="sound-toggle" class="btn-audio" title="Увімкнути/вимкнути аудіо-ефекти">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </button>
+
+        <button class="btn-primary-pill js-open-modal">
+          <span>ВСТУПИТИ В СНТ</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Відкрити меню">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span class="badge-label">
+              <span class="pulse-dot"></span>
+              EST. 1881 • КИЇВ • УКРАЇНА
+            </span>
+            <span>НАЦІОНАЛЬНИЙ МЕДИЧНИЙ УНІВЕРСИТЕТ</span>
+          </div>
+
+          <h1 class="hero-title">
+            НАУКОВИЙ АВАНГАРД
+            <span class="accent-word">СНТ ІМЕНІ КИСЕЛЯ</span>
+          </h1>
+
+          <p class="hero-desc">
+            Студентське наукове товариство імені О.А. Киселя НМУ імені О.О. Богомольця — це твоя перша сходинка у величний світ доказової науки. Понад 140 років виховуємо провідних вчених, хірургів, діагностів та лідерів сучасної медицини.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#circles" class="btn-hero-main">
+              <span>ОБРАТИ НАУКОВИЙ ГУРТОК</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button class="btn-hero-secondary js-open-modal">
+              <span>ПОДАТИ ЗАЯВКУ В СНТ</span>
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num text-gradient">1881</span>
+              <span class="stat-label">Рік заснування</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num text-gradient-cyan">65+</span>
+              <span class="stat-label">Наукових гуртків</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num text-gradient">3 500+</span>
+              <span class="stat-label">Студентів-дослідників</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num text-gradient-gold">10+</span>
+              <span class="stat-label">Конференцій/рік</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-main-card">
+            <div class="hero-card-header">
+              <div class="university-crest">
+                <img src="./assets/images/nmu-logo-white.svg" alt="НМУ імені О.О. Богомольця" class="crest-img">
+                <div class="crest-meta">
+                  <strong>НМУ ІМ. О.О. БОГОМОЛЬЦЯ</strong>
+                  <span>ЧЕСТЬ • МИЛОСЕРДЯ • СЛАВА</span>
+                </div>
+              </div>
+              <span class="card-status-pill">АКТИВНИЙ СЕЗОН</span>
+            </div>
+
+            <div class="hero-image-wrap">
+              <img src="./assets/images/snt-hero.jpg" alt="СНТ імені Киселя НМУ">
+            </div>
+
+            <div class="hero-card-meta">
+              <span class="card-tag">СТУДЕНТСЬКА НАУКОВА РАДА</span>
+              <h3 class="card-heading">ДОСЛІДЖЕННЯ, ЩО РЯТУЮТЬ ЖИТТЯ</h3>
+              <p class="card-desc">
+                Міжнародні колаборації, клінічні спостереження, грантові дослідження та фахові публікації студентів усіх факультетів.
+              </p>
+            </div>
+          </div>
+
+          <!-- Floating Satellite Chips -->
+          <div class="floating-chip floating-chip-1">
+            <div class="chip-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="chip-content">
+              <span class="chip-title">AYMSCONF 2026</span>
+              <span class="chip-sub">Флагманська конференція</span>
+            </div>
+          </div>
+
+          <div class="floating-chip floating-chip-2">
+            <div class="chip-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <div class="chip-content">
+              <span class="chip-title">ВАК КАТЕГОРІЯ «Б»</span>
+              <span class="chip-sub">Власний науковий журнал</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MARQUEE TICKER STRIP
+       ======================================================================== -->
+  <div class="ticker-wrap">
+    <div class="ticker-content">
+      <div class="ticker-item">
+        <span>СНТ ІМЕНІ О.А. КИСЕЛЯ</span> <span class="ticker-dot"></span>
+        <span>НМУ ІМЕНІ О.О. БОГОМОЛЬЦЯ</span> <span class="ticker-dot"></span>
+        <span>65+ СТУДЕНТСЬКИХ НАУКОВИХ ГУРТКІВ</span> <span class="ticker-dot"></span>
+        <span>МІЖНАРОДНА КОНФЕРЕНЦІЯ AYMSCONF</span> <span class="ticker-dot"></span>
+        <span>УКРАЇНСЬКИЙ НАУКОВО-МЕДИЧНИЙ МОЛОДІЖНИЙ ЖУРНАЛ</span> <span class="ticker-dot"></span>
+        <span>EST. 1881</span> <span class="ticker-dot"></span>
+        <span>ЧЕСТЬ • МИЛОСЕРДЯ • СЛАВА</span> <span class="ticker-dot"></span>
+      </div>
+      <div class="ticker-item">
+        <span>СНТ ІМЕНІ О.А. КИСЕЛЯ</span> <span class="ticker-dot"></span>
+        <span>НМУ ІМЕНІ О.О. БОГОМОЛЬЦЯ</span> <span class="ticker-dot"></span>
+        <span>65+ СТУДЕНТСЬКИХ НАУКОВИХ ГУРТКІВ</span> <span class="ticker-dot"></span>
+        <span>МІЖНАРОДНА КОНФЕРЕНЦІЯ AYMSCONF</span> <span class="ticker-dot"></span>
+        <span>УКРАЇНСЬКИЙ НАУКОВО-МЕДИЧНИЙ МОЛОДІЖНИЙ ЖУРНАЛ</span> <span class="ticker-dot"></span>
+        <span>EST. 1881</span> <span class="ticker-dot"></span>
+        <span>ЧЕСТЬ • МИЛОСЕРДЯ • СЛАВА</span> <span class="ticker-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SECTION: PILLARS / ADVANTAGES
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">ЕКОСИСТЕМА РОЗВИТКУ</span>
+        <h2 class="section-title">ТВІЙ ШЛЯХ ВІД СТУДЕНТА ДО ВЧЕНОГО СВІТОВОГО РІВНЯ</h2>
+        <p class="section-desc">
+          СНТ — це не просто формальне об'єднання, а потужний дослідницький інкубатор, який надає студенту доступ до провідних клінічних баз, лабораторій та світової наукової спільноти.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">КЛІНІЧНИЙ ДОСВІД & ДОСЛІДЖЕННЯ</h3>
+            <p class="pillar-text">
+              Участь у клінічних обходах, розбір унікальних пацієнтів, робота в операційних та дослідницьких лабораторіях НДІ експериментальної медицини НМУ.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">ФАХОВІ ПУБЛІКАЦІЇ ВАК УКРАЇНИ</h3>
+            <p class="pillar-text">
+              Публікуйте тези та повнотекстові статті в «Українському науково-медичному молодіжному журналі» (категорія Б), індексованому в міжнародних наукометричних базах.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">МІЖНАРОДНИЙ NETWORKING</h3>
+            <p class="pillar-text">
+              Флагманська конференція AYMSConf, телемости із закордонними медичними центрами, лекції всесвітньо відомих хірургів і вчених.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">04</span>
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">ОРАТОРСТВО ТА ЛІДЕРСТВО</h3>
+            <p class="pillar-text">
+              Навички публічних виступів, наукового дизайну, статистичного аналізу даних у R/SPSS та впевненого захисту робіт перед вченою радою.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: CIRCLES CATALOG (INTERACTIVE FILTER & SEARCH)
+       ======================================================================== -->
+  <section class="section" id="circles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">КАТАЛОГ СНГ</span>
+        <h2 class="section-title">СТУДЕНТСЬКІ НАУКОВІ ГУРТКИ НМУ</h2>
+        <p class="section-desc">
+          Студентський науковий гурток (СНГ) — основна структурна одиниця наукової роботи на кафедрі. Ваш курс та факультет не обмежують можливість відвідувати будь-який гурток університету.
+        </p>
+      </div>
+
+      <div class="circles-toolbar">
+        <div class="search-box-wrap">
+          <svg class="search-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="circle-search" class="search-input" placeholder="Пошук гуртка за назвою, кафедрою чи ключовим словом (напр. хірургія, генетика)...">
+        </div>
+
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">Всі напрямки</button>
+          <button class="filter-btn" data-filter="surgery">Хірургічний</button>
+          <button class="filter-btn" data-filter="therapy">Терапевтичний</button>
+          <button class="filter-btn" data-filter="pediatrics">Педіатрія & Акушерство</button>
+          <button class="filter-btn" data-filter="dentistry">Стоматологія</button>
+          <button class="filter-btn" data-filter="pharmacy">Фармація</button>
+          <button class="filter-btn" data-filter="fundamental">Фундаментальна</button>
+          <button class="filter-btn" data-filter="psychiatry">Психічне здоров'я</button>
+          <button class="filter-btn" data-filter="public-health">Тактична & Громадська</button>
+        </div>
+      </div>
+
+      <div class="circles-results-header">
+        <span id="circles-count">Завантаження каталогу...</span>
+        <span>СНГ проводять засідання 1-2 рази на місяць</span>
+      </div>
+
+      <div id="circles-grid" class="circles-grid">
+        <!-- Rendered dynamically by circles-data.js + main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: 140+ YEARS LEGACY & TIMELINE
+       ======================================================================== -->
+  <section class="section history-section" id="history">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">ІСТОРИЧНИЙ СПАДОК</span>
+        <h2 class="section-title">ПОНАД 140 РОКІВ НАУКОВОЇ ВЕЛИЧІ (1881 — 2026)</h2>
+        <p class="section-desc">
+          Від студентської ініціативи Олександра Киселя в Університеті Святого Володимира до найпотужнішого медичного наукового товариства країни.
+        </p>
+      </div>
+
+      <div class="history-hero-box">
+        <div class="history-portrait-wrap">
+          <img src="./assets/images/snt-banner.jpg" alt="СНТ імені Киселя НМУ">
+          <div class="history-portrait-caption">
+            <strong>ОЛЕКСАНДР АНДРІЙОВИЧ КИСІЛЬ (1859–1938)</strong>
+            <span>Студент Університету Св. Володимира, фундатор Товариства (1881), видатний вчений-педіатр</span>
+          </div>
+        </div>
+
+        <div class="history-bio-text">
+          <span class="badge-label">
+            <span class="pulse-dot"></span>
+            ФУНДАТОР ТА ТРАДИЦІЇ
+          </span>
+          <h3 class="font-druk" style="font-size: 1.4rem; color: #ffffff; line-height: 1.2;">
+            ІМ'Я, ЩО СТАЛО СИМВОЛОМ ВІДДАНОСТІ НАУЦІ
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            26 жовтня 1881 року на медичному факультеті Імператорського Університету Святого Володимира у Києві виникло «Клінічне товариство студентів-медиків». Його першим Головою Ради став студент Олександр Кисіль — згодом видатний професор, основоположник дитячої ревматології та інфекційної педіатрії.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            У 1970 році Товариству було офіційно присвоєно ім'я його легендарного засновника. Сьогодні СНТ імені Киселя продовжує цю понад 140-річну естафету знань, об'єднуючи нові покоління медичних першопрохідців.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline Component -->
+      <div class="timeline-track">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1881</div>
+            <h4 class="timeline-title">ЗАСНУВАННЯ ТОВАРИСТВА</h4>
+            <p class="timeline-desc">
+              26 жовтня студенти-медики на чолі з Олександром Киселем засновують «Клінічне товариство студентів-медиків» у Києві.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1918</div>
+            <h4 class="timeline-title">ДОПУСК ЖІНОК ДО НАУКИ</h4>
+            <p class="timeline-desc">
+              Організація змінює назву на «Клінічне товариство студентів медиків і медичок міста Києва», відкриваючи нову епоху рівності в медицині.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1922</div>
+            <h4 class="timeline-title">СНТ КИЇВСЬКОГО МЕДІНСТИТУТУ</h4>
+            <p class="timeline-desc">
+              Перейменування та інтеграція в структуру реорганізованого Київського медичного інституту.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1936</div>
+            <h4 class="timeline-title">ПЕРША НАУКОВА КОНФЕРЕНЦІЯ</h4>
+            <p class="timeline-desc">
+              Проведення першої масштабної офіційної студентської наукової конференції інституту.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1970</div>
+            <h4 class="timeline-title">ПРИСВОЄННЯ ІМЕНІ О.А. КИСЕЛЯ</h4>
+            <p class="timeline-desc">
+              Рішенням вченої ради Товариству офіційно присвоєно ім'я його засновника, професора Олександра Киселя.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">1993</div>
+            <h4 class="timeline-title">ЗАСНУВАННЯ ЖУРНАЛУ УНММЖ</h4>
+            <p class="timeline-desc">
+              СНТ виступає співзасновником «Українського науково-медичного молодіжного журналу» — фахового видання ВАК України.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2026</div>
+            <h4 class="timeline-title">ЦИФРОВА ЕРА ТА АВАНГАРД</h4>
+            <p class="timeline-desc">
+              65+ наукових гуртків, понад 3 500 активних учасників, щорічні міжнародні симпозіуми AYMSConf та інтеграція штучного інтелекту в медичний пошук.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: CONFERENCES & EVENTS
+       ======================================================================== -->
+  <section class="section" id="conferences">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">ФЛАГМАНСЬКІ ЗАХОДИ</span>
+        <h2 class="section-title">ЕПІЦЕНТР НАУКОВИХ ПОДІЙ УКРАЇНИ</h2>
+        <p class="section-desc">
+          Щороку СНТ імені Киселя організовує понад 10 галузевих та міжгалузевих міжнародних конференцій, шкіл майстерності та всеукраїнських олімпіад.
+        </p>
+      </div>
+
+      <div class="conf-grid">
+        <div class="conf-hero-card">
+          <div>
+            <span class="badge-label">
+              <span class="pulse-dot"></span>
+              ГОЛОВНА ПОДІЯ РОКУ
+            </span>
+            <h3 class="conf-title-large">AYMSConf: ANNUAL YOUNG MEDICAL SCIENTISTS CONFERENCE</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1.05rem;">
+              Щорічна міжнародна науково-практична конференція молодих вчених та студентів. Секції з хірургії, внутрішньої медицини, педіатрії, фундаментальних дисциплін та військової медицини.
+            </p>
+
+            <div class="conf-details-list">
+              <div class="conf-detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Більше 1 200 делегатів з України та європейських медичних університетів</span>
+              </div>
+              <div class="conf-detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span>Публікація тез у спеціальному випуску фахового журналу</span>
+              </div>
+              <div class="conf-detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Грантові сертифікати та нагороди за найкращі клінічні та експериментальні доповіді</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-hero-main js-open-modal" style="align-self: flex-start;">
+            <span>ЗАРЕЄСТРУВАТИСЯ НА AYMSCONF</span>
+          </button>
+        </div>
+
+        <div class="conf-events-column">
+          <div class="event-subcard">
+            <span class="event-tag">ЛЕКТОРІЙ & ВОРКШОПИ</span>
+            <h4 class="event-subcard-title">KYSIL TALKS</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Серія відкритих інтерактивних зустрічей із провідними хірургами, онкологами та фармакологами. Відверті розбори клінічних помилок та кар'єрні траєкторії.
+            </p>
+          </div>
+
+          <div class="event-subcard">
+            <span class="event-tag">ІНТЕНСИВНІ КУРСИ</span>
+            <h4 class="event-subcard-title">ЗИМОВА ТА ЛІТНЯ ШКОЛИ СНТ</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Інтенсивні тренінги з методології медичних досліджень, доказової медицини, біостатистики та академічної доброчесності.
+            </p>
+          </div>
+
+          <div class="event-subcard">
+            <span class="event-tag">ІНТЕЛЕКТУАЛЬНІ ЗМАГАННЯ</span>
+            <h4 class="event-subcard-title">ВСЕУКРАЇНСЬКІ ОЛІМПІАДИ ТА ХАКАТОНИ</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Клінічні брейн-ринги між університетами, змагання з розв'язання невідкладних медичних кейсів та застосування ШІ в діагностиці.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: JOURNAL / USMYJ
+       ======================================================================== -->
+  <section class="section" id="journal">
+    <div class="container">
+      <div class="journal-container">
+        <div>
+          <div class="journal-badge-row">
+            <span class="badge-label">ВАК КАТЕГОРІЯ «Б»</span>
+            <span class="badge-label">ISSN 1729-1704</span>
+          </div>
+
+          <h2 class="journal-heading">
+            УКРАЇНСЬКИЙ НАУКОВО-МЕДИЧНИЙ МОЛОДІЖНИЙ ЖУРНАЛ
+          </h2>
+
+          <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">
+            Заснований у 1993 році Студентським науковим товариством імені О.А. Киселя та НМУ. Це фахове наукове періодичне видання України, де студенти та молоді науковці публікують результати власних оригінальних досліджень.
+          </p>
+
+          <div class="journal-features">
+            <div class="journal-feature-item">
+              <span class="feature-number">4</span>
+              <span class="feature-caption">Випуски щороку</span>
+            </div>
+            <div class="journal-feature-item">
+              <span class="feature-number">100%</span>
+              <span class="feature-caption">Сліпе рецензування</span>
+            </div>
+            <div class="journal-feature-item">
+              <span class="feature-number">DOI</span>
+              <span class="feature-caption">Кожній статті Crossref</span>
+            </div>
+            <div class="journal-feature-item">
+              <span class="feature-number">Open</span>
+              <span class="feature-caption">Вільний доступ (OA)</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://nmuofficial.com/nauka/fahovi-vydannya/" target="_blank" rel="noopener" class="btn-hero-main">
+              <span>ПЕРЕЙТИ ДО ВИДАННЯ</span>
+            </a>
+            <button class="btn-hero-secondary js-open-modal">
+              <span>ПОДАТИ СТАТТЮ / ТЕЗИ</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="journal-cover-mockup">
+          <div class="cover-card">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan);">ISSN 1729-1704</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold);">VOL. 31 • ISSUE 4</span>
+              </div>
+              <div style="margin-top: 2rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">ФАХОВЕ ВИДАННЯ УКРАЇНИ</span>
+                <h3 style="font-family: var(--font-druk); font-size: 1.3rem; color: #ffffff; line-height: 1.2; margin-top: 0.5rem;">
+                  УКРАЇНСЬКИЙ НАУКОВО-МЕДИЧНИЙ МОЛОДІЖНИЙ ЖУРНАЛ
+                </h3>
+              </div>
+            </div>
+
+            <div>
+              <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">
+                Спеціальний випуск за матеріалами щорічної конференції студентів та молодих вчених AYMSConf.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">КИЇВ • НМУ</span>
+                <span style="font-family: var(--font-druk); font-size: 0.75rem; color: var(--accent-cyan);">INDEX COPERNICUS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: LEADERSHIP & CONTACTS
+       ======================================================================== -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">РАДА СНТ ТА ЗВ'ЯЗОК</span>
+        <h2 class="section-title">ПРАВЛІННЯ ТА ОФІЦІЙНІ КАНАЛИ</h2>
+        <p class="section-desc">
+          Виникли запитання щодо приєднання до СНТ, реєстрації гуртка або участі у конференції? Звертайтеся безпосередньо до керівництва або долучайтеся до наших спільнот.
+        </p>
+      </div>
+
+      <div class="leadership-grid">
+        <!-- Head of Council Card -->
+        <div class="head-card">
+          <div class="head-header">
+            <div class="head-avatar-box">
+              <img src="./assets/images/snt-avatar.jpg" alt="Голова Ради СНТ">
+            </div>
+            <div>
+              <span class="badge-label" style="margin-bottom: 0.5rem;">ГОЛОВА РАДИ СНТ</span>
+              <h3 class="head-info-name">СИРВАТКА РОМАН ІГОРОВИЧ</h3>
+              <p class="head-info-role">Голова Ради СНТ імені О.А. Киселя НМУ</p>
+            </div>
+          </div>
+
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            Координує роботу студентських наукових гуртків усіх факультетів, організацію міжнародної конференції AYMSConf та прийом нових членів до Товариства.
+          </p>
+
+          <div class="head-contacts-list">
+            <div class="contact-pill-item">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+380 (97) 329-93-22</span>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('+380973299322', 'Номер телефону скопійовано!')" title="Скопіювати">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="contact-pill-item">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>romansyrvatka1@nmu.ua</span>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('romansyrvatka1@nmu.ua', 'Email скопійовано!')" title="Скопіювати">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="contact-pill-item">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                <span>Telegram: @areskaro</span>
+              </div>
+              <a href="https://t.me/areskaro" target="_blank" rel="noopener" class="copy-btn" title="Написати">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Channels Column -->
+        <div class="socials-channel-column">
+          <a href="https://t.me/sntnmu" target="_blank" rel="noopener" class="channel-card-link">
+            <div class="channel-left">
+              <div class="channel-icon tg">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="channel-name">ТЕЛЕГРАМ СНТ</h4>
+                <span class="channel-subs">@sntnmu • 3 040+ підписників</span>
+              </div>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="https://t.me/GurtkyNMU" target="_blank" rel="noopener" class="channel-card-link">
+            <div class="channel-left">
+              <div class="channel-icon tg">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="channel-name">ГУРТКИ НМУ</h4>
+                <span class="channel-subs">@GurtkyNMU • 3 550+ підписників</span>
+              </div>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="https://www.instagram.com/snt_nmuofficial" target="_blank" rel="noopener" class="channel-card-link">
+            <div class="channel-left">
+              <div class="channel-icon inst">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div>
+                <h4 class="channel-name">INSTAGRAM ОФІЦІЙНИЙ</h4>
+                <span class="channel-subs">@snt_nmuofficial</span>
+              </div>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="https://www.youtube.com/@sntnmuofficial" target="_blank" rel="noopener" class="channel-card-link">
+            <div class="channel-left">
+              <div class="channel-icon yt">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="channel-name">YOUTUBE КАНАЛ СНТ</h4>
+                <span class="channel-subs">@sntnmuofficial • Записи лекцій</span>
+              </div>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img src="./assets/images/nmu-logo-white.svg" alt="НМУ імені О.О. Богомольця" style="height: 38px;">
+          </div>
+          <p class="footer-motto">ЧЕСТЬ • МИЛОСЕРДЯ • СЛАВА</p>
+          <p class="footer-text">
+            Студентське наукове товариство імені О.А. Киселя Національного медичного університету імені О.О. Богомольця. Засноване 26 жовтня 1881 року.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">НАВІГАЦІЯ</h4>
+          <ul class="footer-links-list">
+            <li><a href="#about">Про Товариство</a></li>
+            <li><a href="#circles">Наукові гуртки</a></li>
+            <li><a href="#history">Історія та постать Киселя</a></li>
+            <li><a href="#conferences">Конференція AYMSConf</a></li>
+            <li><a href="#journal">Молодіжний журнал ВАК</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">РЕСУРСИ НМУ</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://nmuofficial.com" target="_blank" rel="noopener">Офіційний портал НМУ</a></li>
+            <li><a href="https://student.nmuofficial.com" target="_blank" rel="noopener">Кабінет студента</a></li>
+            <li><a href="https://choko.link/sntnmu" target="_blank" rel="noopener">Choko.link СНТ</a></li>
+            <li><a href="https://forms.gle/sVjXp9ohwVNctv5u9" target="_blank" rel="noopener">Google форма вступу</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">ЛОКАЦІЯ</h4>
+          <p class="footer-text">
+            Україна, 01601, м. Київ,<br>
+            бульвар Тараса Шевченка, 13 /<br>
+            просп. Берестейський, 34,<br>
+            Морфологічний корпус НМУ
+          </p>
+          <p class="footer-text" style="margin-top: 1rem; color: var(--accent-cyan);">
+            snt.bogomolets@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 1881–2026 СНТ імені О.А. Киселя НМУ імені О.О. Богомольця. Всі права захищено.</span>
+        <span>Розроблено з гордістю за українську медичну науку</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       APPLICATION MODAL (ВСТУП В СНТ)
+       ======================================================================== -->
+  <div id="join-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <button id="modal-close" class="modal-close-btn" aria-label="Закрити">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <span class="badge-label">
+        <span class="pulse-dot"></span>
+        РЕЄСТРАЦІЯ КАНДИДАТА
+      </span>
+
+      <h3 class="modal-heading">ВСТУП ДО ЛАВ СНТ ІМЕНІ КИСЕЛЯ</h3>
+      <p class="modal-sub">
+        Членство в Товаристві здійснюється на добровільних засадах і відкриває прямий доступ до дослідницьких грантів, лабораторій та конференцій.
+      </p>
+
+      <div class="criteria-list">
+        <div class="criteria-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Студент 1-5 курсу (при 6-річному) або 1-4 курсу (при 5-річному навчанні)</span>
+        </div>
+        <div class="criteria-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Середній академічний бал успішності не нижче 4.0</span>
+        </div>
+        <div class="criteria-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Активна участь у роботі принаймні одного студентського наукового гуртка</span>
+        </div>
+      </div>
+
+      <form id="snt-apply-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Прізвище та ім'я *</label>
+            <input type="text" class="form-input" placeholder="Іван Ковальчук" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Факультет та курс *</label>
+            <input type="text" class="form-input" placeholder="Медичний №1, 3 курс" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Номер телефону (Telegram) *</label>
+            <input type="tel" class="form-input" placeholder="+380 99 123 45 67" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Корпоративний email (@nmu.ua) *</label>
+            <input type="email" class="form-input" placeholder="student@nmu.ua" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Пріоритетний науковий гурток (СНГ)</label>
+          <input type="text" id="modal-circle-select" class="form-input" placeholder="Наприклад: Хірургії №1 або Патофізіології">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Коротка мотивація / Науковий інтерес</label>
+          <textarea class="form-textarea" rows="3" placeholder="Опишіть галузь досліджень, яка вас захоплює, або тему бажаної наукової роботи..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-form">
+          ВІДПРАВИТИ ЗАЯВКУ В РАДУ СНТ
+        </button>
+
+        <div style="text-align: center; margin-top: 1.2rem;">
+          <a href="https://forms.gle/sVjXp9ohwVNctv5u9" target="_blank" rel="noopener" style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-cyan); text-decoration: none;">
+            Або заповніть розширену офіційну Google-форму ↗
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Component -->
+  <div id="toast" class="toast-box"></div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/circles-data.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+</body>
+</html>
